@@ -1,0 +1,78 @@
+{
+  "name": "@sparkz-community/common-server-lib",
+  "description": "",
+  "version": "2.1.21",
+  "homepage": "https://github.com/feathersjs/server",
+  "main": "lib/",
+  "keywords": [
+    "feathers",
+    "feathers-plugin"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/iy4u/common-server-lib.git"
+  },
+  "author": {
+    "name": "IY Foundation Development",
+    "email": "dev@sparkz.community",
+    "url": "https://gitlab.com/iy4u/common-server-lib"
+  },
+  "contributors": [],
+  "bugs": {
+    "url": "https://gitlab.com/iy4u/common-server-lib/issues"
+  },
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run coverage",
+    "coverage": "nyc npm run mocha",
+    "lint": "eslint --fix lib/. test/.",
+    "clean": "shx rm -rf test/data/",
+    "mocha": "npm run clean && NODE_ENV=test mocha test/ --timeout 5000 --recursive --exit",
+    "release:pre": "npm version prerelease && npm publish --tag pre --access public && git push origin",
+    "release:patch": "npm version patch && npm publish --access public && git push origin",
+    "release:minor": "npm version minor && npm publish --access public && git push origin",
+    "release:major": "npm version major && npm publish --access public && git push origin"
+  },
+  "semistandard": {
+    "env": [
+      "mocha"
+    ]
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test/",
+    "config": "config/"
+  },
+  "dependencies": {
+    "@feathersjs/authentication": "^4.5.11",
+    "@feathersjs/authentication-local": "^4.5.11",
+    "@feathersjs/authentication-oauth": "^4.5.11",
+    "@iy4u/common-utils": "^0.1.2",
+    "connect-redis": "^6.0.0",
+    "feathers-authentication-hooks": "^1.0.2",
+    "feathers-hooks-common": "^5.0.4",
+    "feathers-mongoose": "^8.5.1",
+    "ioredis": "^4.28.0",
+    "mongodb-core": "^3.2.7",
+    "mongoose": "^6.3.3",
+    "sanitize-html": "^2.3.0",
+    "tunnel-ssh": "^4.1.6",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^6.8.0",
+    "istanbul": "^1.1.0-alpha.1",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "shx": "^0.3.2"
+  },
+  "peerDependencies": {
+    "@feathersjs/errors": "4.x",
+    "@ionrev/ir-auth-management-server": "3.x",
+    "@ionrev/ir-roles-server": "2.x"
+  }
+}

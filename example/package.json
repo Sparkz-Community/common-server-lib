@@ -1,0 +1,29 @@
+{
+  "name": "ir-template",
+  "version": "0.0.0",
+  "scripts": {
+    "docker-build": "docker system prune -af;cp -vf ${HOME}/.npmrc server/.npmrc; cp -vf ${HOME}/.npmrc client/.npmrc; cp -vf ${HOME}/.npmrc export/.npmrc && docker-compose build --pull --parallel --force-rm ; rm -vf client/.npmrc && updateVersion.sh && ver=$(awk 'FNR <= 1' version) && docker tag ionrev/ir-template-server ionrev/ir-template-server:${ver} && docker tag ionrev/ir-template-client ionrev/ir-template-client:${ver} && docker tag ionrev/ir-template-lib ionrev/ir-template-lib:${ver} && docker push ionrev/ir-template-server && docker push ionrev/ir-template-client && docker push ionrev/ir-template-lib && git add . && git commit -m ${ver} && git push",
+    "docker:prune": "docker system prune -af",
+    "docker:build": "docker-compose build --pull --parallel --force-rm",
+    "docker:version": "updateVersion.sh && ver=$(awk 'FNR <= 1' version)",
+    "docker:tag-server": "docker tag ionrev/ir-template-server ionrev/ir-template-server:${ver}",
+    "docker:tag-client": "docker tag ionrev/ir-template-client ionrev/ir-template-client:${ver}",
+    "docker:push-server": "docker push ionrev/ir-template-server",
+    "docker:push-client": "docker push ionrev/ir-template-client",
+    "docker:git": "git add  && git commit -m ${ver} && git push",
+    "docker:deploy": "npm run docker:prune && npm run docker:build && npm run docker:version && npm run docker:tag-server && npm run docker:tag-client && npm run docker:push-server && npm run docker:push-client && npm run docker:git",
+    "d-build": "docker system prune -af;docker-compose build --pull --parallel --force-rm",
+    "version:major": "npm version major && npm version major --prefix server && npm version major --prefix ./client",
+    "version:minor": "npm version minor && npm version minor --prefix server && npm version minor --prefix ./client",
+    "version:patch": "npm version patch && npm version patch --prefix server && npm version patch --prefix ./client",
+    "release:prerelease": "npm version prerelease && npm publish --tag pre",
+    "d-push": "docker tag ionrev/ir-template-server ionrev/ir-template-server:${ver} && docker tag ionrev/ir-template-client ionrev/ir-template-client:${ver} && docker push ionrev/ir-template-server && docker push ionrev/ir-template-client",
+    "g-push": "git commit -m ${ver} && git push",
+    "run-build": "node src/"
+  },
+  "dependencies": {
+    "mongodb-core": "^3.2.7",
+    "mongoose": "^6.1.4",
+    "remote-origin-url": "^2.0.0"
+  }
+}

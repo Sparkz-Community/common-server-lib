@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+  server:
+    image: ionrev/ir-template-server:latest
+    build:
+      context: server
+      dockerfile: server/Dockerfile
+    ports:
+      - '3030:3030'
+    env_file:
+      - server/docker/server.env
+
+  client:
+    image: ionrev/ir-template-client:latest
+    build:
+      context: client
+      dockerfile: client/Dockerfile
+    ports:
+      - '8080:80'
+    depends_on:
+      - server
+    env_file:
+      - client/docker/client.env
+
+  lib:
+    image: ionrev/ir-template-lib:latest
+    build:
+      context: ./export/
+      dockerfile: Dockerfile
+    ports:
+      - '3333:3333'
+    env_file:
+      - export/docker/export.env

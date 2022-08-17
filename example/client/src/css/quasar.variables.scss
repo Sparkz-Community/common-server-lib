@@ -1,0 +1,79 @@
+// Quasar SCSS (& Sass) Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass/SCSS variables found in Quasar's source Sass/SCSS files.
+
+// Check documentation for full list of Quasar variables
+
+// Your own variables (that are declared here) and Quasar's own
+// ones will be available out of the box in your .vue/.scss/.sass files
+
+// It's highly recommended to change the default colors
+// to match your app's branding.
+// Tip: Use the "Theme Builder" on Quasar's documentation website.
+
+$h1:        (size: 3.75rem,     line-height: 3.75rem,     letter-spacing: -.01562em, weight: 300) !default;
+$h2:        (size: 3rem,  line-height: 3.125rem,  letter-spacing: -.00833em, weight: 300) !default;
+$h3:        (size: 2.125rem,     line-height: 2.5rem, letter-spacing: normal,    weight: 400) !default;
+$h4:        (size: 1.5rem, line-height: 2rem,   letter-spacing: .00735em,  weight: 400) !default;
+$h5:        (size: 1.25rem,   line-height: 2rem,     letter-spacing: normal,    weight: 400) !default;
+$h6:        (size: 1rem,  line-height: 1.7rem,     letter-spacing: .0125em,   weight: 500) !default;
+$subtitle1: (size: 1rem,     line-height: 1.75rem,  letter-spacing: .00937em,  weight: 400) !default;
+$subtitle2: (size: .875rem,  line-height: 1.375rem, letter-spacing: .00714em,  weight: 500) !default;
+$body1:     (size: 1rem,     line-height: 1.5rem,   letter-spacing: .03125em,  weight: 400) !default;
+$body2:     (size: .875rem,  line-height: 1.25rem,  letter-spacing: .01786em,  weight: 400) !default;
+$overline:  (size: .75rem,   line-height: 2rem,     letter-spacing: .16667em,  weight: 500) !default;
+$caption:   (size: .75rem,   line-height: 1.25rem,  letter-spacing: .03333em,  weight: 400) !default;
+
+$primary   : #669cf2;
+$secondary : #26A69A;
+$accent    : #9C27B0;
+
+$dark      : #1D1D1D;
+
+$positive  : #21BA45;
+$negative  : #C10015;
+$info      : #31CCEC;
+$warning   : #F2C037;
+
+
+:root {
+  --q-color-primary: #{$primary};
+  --q-color-secondary: #{$secondary};
+  --q-color-accent: #{$accent};
+
+  --q-color-dark: #{$dark};
+
+  --q-color-positive: #{$positive};
+  --q-color-negative: #{$negative};
+  --q-color-info: #{$info};
+  --q-color-warning: #{$warning};
+
+  /*
+  * Custom Variables
+  */
+
+  --color-primary-0: #{$primary};	/* Main Primary color */
+  --color-primary-1: #66A4E0;
+  --color-primary-2: #3E8CD8;
+  --color-primary-3: #0863BB;
+  --color-primary-4: #064887;
+
+  --color-accent-0: #{$accent};	/* Main accent color */
+  --color-accent-1: #FFC269;
+  --color-accent-2: #FFAF3B;
+  --color-accent-3: #FF9700;
+  --color-accent-4: #D07B00;
+
+  --color-secondary-0: #{$secondary};	/* Main Secondary color (2) */
+  --color-secondary-1: #5BDDCF;
+  --color-secondary-2: #31D4C3;
+  --color-secondary-3: #00B5A2;
+  --color-secondary-4: #008174;
+
+  --color-complement-0: #FF730C;	/* Main complement color (1) */
+  --color-complement-1: #FFA969;
+  --color-complement-2: #FF8E3B;
+  --color-complement-3: #FF6C00;
+  --color-complement-4: #D05800;
+}

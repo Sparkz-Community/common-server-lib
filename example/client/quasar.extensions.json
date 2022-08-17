@@ -1,0 +1,10 @@
+{
+  "@quasar/qenv": {
+    "common_root_object": "none",
+    "add_qenv_to_gitignore": true
+  },
+  "@ionrev/ir-auth-management-client": {
+    "irFormGenApp": true
+  },
+  "@ionrev/ir-form-gen-app": {}
+}

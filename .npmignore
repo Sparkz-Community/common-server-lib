@@ -1,0 +1,14 @@
+.editorconfig
+.jshintrc
+.travis.yml
+.istanbul.yml
+.babelrc
+.idea/
+.vscode/
+test/
+coverage/
+.github/
+config/
+config/test.json
+lib/app.js
+lib/mongoose.js
